@@ -1,0 +1,47 @@
+.n-navbar {
+    background-color: white; /* Set background color to transparent */
+    position: fixed; /* Ensure navbar stays fixed at the top */
+    width: 100%; /* Full width of the viewport */
+    z-index: 1000; /* Ensure navbar is on top of other content */
+    /* Add any other styles as needed */
+  }
+  
+  .n-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px; /* Adjust height as needed */
+  }
+  
+  .n-navbar-logo {
+    font-size: 1.5rem; /* Example font size for logo */
+  }
+  
+  .n-navbar-menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .n-navbar-item {
+    margin: 0 15px;
+  }
+  
+  .n-navbar-item a {
+    text-decoration: none;
+    color: black; /* Example text color for links */
+    /* Add any other styles for links */
+  }
+  .n-navbar-item a:hover{
+    color:#F2BC1D;
+  }
+  .n-navbar-logo img {
+    width: 50px;
+    height: 50px;
+    margin-top: 20;
+    /* Smooth transition for zoom effect */
+  }
+  
+  
+  
