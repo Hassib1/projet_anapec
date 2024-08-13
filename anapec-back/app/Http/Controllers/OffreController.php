@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class OffreController extends Controller
 {
+    //this is offre controller
     public function offre(Request $request)
     {
         // Fetch all slides
