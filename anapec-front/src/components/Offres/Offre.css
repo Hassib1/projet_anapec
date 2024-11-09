@@ -1,48 +1,86 @@
-/* Offre.css */
 .offres-list {
-    padding: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin: 0 auto;
+}
+.offres-title {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #2d2d2d;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.offres-main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.offres-container {
+  flex: 2;
+  margin-right: 20px;
+}
+
+.offre-details-container {
+  flex: 3;
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+}
+
+/* Card styles */
+.offre-card {
+  border: 1px solid #ececec;
+  padding: 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  background-color: #fff;
+  cursor: pointer; /* Makes the card look clickable */
+  margin-bottom: 10px;
+}
+
+.offre-card:hover {
+  background-color: #f1f1f1; /* Light grey background on hover */
+}
+
+/* Selected card style */
+.offre-card.selected {
+  background-color: #e0f7fa; /* Light blue background when selected */
+}
+
+.offre-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Align items vertically */
+}
+
+.offre-title-container {
+  margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.offre-link {
+  font-size: 18px;
+  font-weight: 600;
+  color: #003399; /* Indeed's link color */
+  text-decoration: none;
+}
+
+.offre-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .offres-main {
+    flex-direction: column;
   }
-  
-  .offres-title {
-    text-align: center;
+
+  .offres-container,
+  .offre-details-container {
+    margin-right: 0;
     margin-bottom: 20px;
-    background-color: #f0c030;
   }
-  
-  .offres-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-  
-  .offre-card {
-    flex: 0 0 auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 300px; /* Ajustez la largeur selon vos besoins */
-    margin-right: 10px; /* Espacement entre les cartes */
-  }
-  
-  .offre-card .card-body {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .offre-details {
-    flex-grow: 1;
-  }
-  
-  .offre-card .card-title {
-    font-size: 1rem; /* Ajustez la taille de la police selon vos besoins */
-  }
-  
-  .offre-card .card-subtitle {
-    font-size: 0.9rem; /* Ajustez la taille de la police selon vos besoins */
-  }
-  
-  .offre-card .card-text {
-    font-size: 0.8rem; /* Ajustez la taille de la police selon vos besoins */
-  }
-  
+}

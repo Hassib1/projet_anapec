@@ -21,6 +21,14 @@ class ActualiteController extends Controller
         $actualites = Actualite::all();
         return view('actualites.index', compact('actualites'));
     }
+   public function show_one($id)
+{
+    // Utiliser findOrFail pour récupérer l'actualité ou retourner une erreur 404 si elle n'existe pas
+    $actualite = Actualite::findOrFail($id);
+
+    // Retourner l'actualité en format JSON
+    return response()->json($actualite);
+}
 
     public function create()
     {
@@ -50,7 +58,7 @@ class ActualiteController extends Controller
             'image' => $path,
         ]);
 
-        return redirect()->route('actualites.index')->with('success', 'Actualité ajoutée avec succès.');
+        return redirect()->route('actualites.index')->with('success', 'Actualité a été ajoutée avec succès.');
     }
 
     public function show(Actualite $actualite)
@@ -86,7 +94,7 @@ class ActualiteController extends Controller
             'image' => $path,
         ]);
 
-        return redirect()->route('actualites.index')->with('success', 'Actualité mise à jour avec succès.');
+        return redirect()->route('actualites.index')->with('success', 'Actualité a été modifiée avec succès.');
     }
 
     public function destroy(Actualite $actualite)
@@ -95,6 +103,6 @@ class ActualiteController extends Controller
             Storage::delete('public/' . $actualite->image);
         }
         $actualite->delete();
-        return redirect()->route('actualites.index')->with('success', 'Actualité supprimée avec succès.');
+        return redirect()->route('actualites.index')->with('success', 'Actualité a été supprimée avec succès.');
     }
 }

@@ -61,7 +61,7 @@ class SlideController extends Controller
     ]);
 
     // Redirect to index page with success message
-    return redirect()->route('slides.index')->with('success', 'Slide created successfully.');
+    return redirect()->route('slides.index')->with('success', 'le Slide a été ajouté avec succès');
 }
 
     /**
@@ -105,7 +105,7 @@ class SlideController extends Controller
     $slide->save();
 
     // Redirect to the slides index page with a success message
-    return redirect()->route('slides.index')->with('success', 'Slide updated successfully.');
+    return redirect()->route('slides.index')->with('success', 'le Slide a été modifié avec succès');
 }
 
     /**
@@ -123,6 +123,6 @@ class SlideController extends Controller
         // Delete the slide from the database
         $slide->delete();
 
-        return redirect()->route('slides.index')->with('success', 'Slide deleted successfully.');
+        return redirect()->route('slides.index')->with('success', 'le Slide a été supprimé avec succès');
     }
 }

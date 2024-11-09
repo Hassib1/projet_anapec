@@ -1,0 +1,53 @@
+/* ActualiteId.css */
+
+/* Link styles */
+.actualite-link {
+  color: white; /* Set the text color to white */
+  text-decoration: none; /* Remove the underline */
+  font-weight: bold; /* Optional: make the text bold */
+  padding: 10px; /* Optional: add some padding */
+  display: inline-block; /* Ensure padding applies */
+}
+
+.actualite-link:hover {
+  text-decoration: underline; /* Optional: underline on hover */
+  color: #f1f1f1; /* Optional: slight color change on hover */
+}
+
+/* Container styles */
+.container {
+  max-width: 100%; /* Allow the container to take full width */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Padding inside the container */
+  background-color: #f9f9f9; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  /* Subtle shadow */
+}
+
+/* Title styles */
+.title {
+  font-size: 2em; /* Font size */
+  color: #333; /* Text color */
+  margin-bottom: 20px; /* Space below the title */
+  text-align: center; /* Center the text */
+  margin-top: 50px; /* Space above the title */
+}
+
+/* Image styles */
+ .image {
+  width: 100%;
+  height: auto; /* Adjust height automatically */
+  max-height: 500px; /* Optional: limit the maximum height */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+/* Content styles */
+.content {
+  font-size: 1.2em; /* Font size */
+  color: #555; /* Text color */
+  line-height: 1.6; 
+  /* Line height for readability */
+}

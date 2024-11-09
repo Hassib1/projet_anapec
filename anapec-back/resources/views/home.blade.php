@@ -122,6 +122,11 @@
                                     Offres
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('videos.index') }}">
+                                     Vidéos
+                                 </a>
+        </li>
                         </ul>
                     </div>
                 </nav>

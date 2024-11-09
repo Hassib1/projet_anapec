@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './Simpleslider.css';
+import './Simpleslider.css'; // Ensure correct CSS file path
 
-
-function SimpleSlider() {
+function SimpleCarousel() {
   const [slides, setSlides] = useState([]);
 
   useEffect(() => {
@@ -32,29 +31,27 @@ function SimpleSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
-    centerMode: true,
+    adaptiveHeight: false, // Disable adaptive height for full-page effect
+    centerMode: false,
     centerPadding: '0',
+    arrows: true,
   };
 
   return (
-  
-    <div>
- 
-      <div className="slider-container">
+    <div className="carousel-container">
       <Slider {...settings}>
-            {slides.map((slide, index) => (
-              <div className="item" key={index}>
-                <img className="slide-image"
-                  src={`http://127.0.0.1:8000/storage/${slide.image_url}`}
-                ></img>
-              </div>
-            ))}
-          </Slider>
-      
-      </div>
+        {slides.map((slide, index) => (
+          <div className="carousel-item" key={index}>
+            <img
+              className="carousel-image"
+              src={`http://127.0.0.1:8000/storage/${slide.image_url}`}
+              alt={`Slide ${index}`}
+            />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 }
 
-export default SimpleSlider;
+export default SimpleCarousel;

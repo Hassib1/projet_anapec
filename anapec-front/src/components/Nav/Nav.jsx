@@ -14,11 +14,9 @@ const Navbar = () => {
           </li>
        
           <li className="n-navbar-item">
-            <a href="#actualite">Actualités</a>
+            <a href="/offrelist">Offres</a>
           </li>
-          <li className="n-navbar-item">
-            <a href="/contact">Contact</a>
-          </li>
+           
         </ul>
       </div>
     </nav>

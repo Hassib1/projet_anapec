@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -6,7 +7,6 @@ import './Actualite.css';
 
 const ActualitesList = () => {
   const [actualites, setActualites] = useState([]);
-  const [expandedIndex, setExpandedIndex] = useState(null);
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/api/actualite')
@@ -15,12 +15,8 @@ const ActualitesList = () => {
       .catch(error => console.error('Error fetching actualites:', error));
   }, []);
 
-  const handleSlideClick = (index) => {
-    setExpandedIndex(index === expandedIndex ? null : index);
-  };
-
   const settings = {
-    infinite: actualites.length > 1, // Enable infinite loop only if more than one item
+    infinite: actualites.length > 1,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
@@ -40,46 +36,40 @@ const ActualitesList = () => {
       }
     ]
   };
-  
-
 
   return (
     <div id='actualite' className="actualites-list">
-    <h1 class='act'>Actualités</h1>
+      <h1 className='act'>Actualités</h1>
       {actualites.length > 0 ? (
-        <Slider {...settings}>
-          {actualites.map((actualite, index) => (
+        <Slider className='slide' {...settings}>
+          {actualites.map((actualite) => (
             <div
               key={actualite.id}
               className="actualite-item"
-              onClick={() => handleSlideClick(index)}
             >
               <div className="image-container">
                 {actualite.image && (
                   <img
-                    className={`actualite-image ${index === expandedIndex ? 'expanded' : ''}`}
+                    className="actualite-image"
                     src={`http://127.0.0.1:8000/storage/${actualite.image}`}
-                    alt="Actualite Image"
+                    alt="Actualite"
                   />
                 )}
-                {index === expandedIndex && (
-                  <div className="actualite-content-full">
-                    <p>{actualite.contenu}</p>
-                  </div>
-                )}
               </div>
-              <div className={`actualite-content-preview ${index === expandedIndex ? 'hidden' : ''}`}>
+              <div className="actualite-content-preview">
                 <h3>{actualite.titre}</h3>
+                <Link to={`/actualites/${actualite.id}`} className="actualite-link">
+                  Voir plus
+                </Link>
               </div>
             </div>
           ))}
         </Slider>
       ) : (
-        <p>No actualités available</p> // Handle case with no items
+        <div></div>
       )}
     </div>
   );
-  
 };
 
 export default ActualitesList;

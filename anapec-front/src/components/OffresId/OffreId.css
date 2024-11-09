@@ -1,4 +1,54 @@
-.offrediv{
- margin-top: 50px;
- margin-bottom: 50px;
-}
+.offre-details-container-div {
+    padding: 15px;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .offre-details-div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .offre-details-div p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .offre-details-div p svg {
+    margin-right: 8px; /* Space between the icon and the text */
+    font-size: 18px; /* Size of the icons */
+  }
+  
+  /* Colors for icons */
+  .offre-details-div p .icon-date {
+    color: #007bff; /* Blue for date */
+  }
+  
+  .offre-details-div p .icon-description {
+    color: #28a745; /* Green for description */
+  }
+  
+  .offre-details-div p .icon-contrat {
+    color: #ffc107; /* Yellow for contract */
+  }
+  
+  .offre-details-div p .icon-formation {
+    color: #dc3545; /* Red for formation */
+  }
+  
+  .offre-details-div p .icon-lieu {
+    color: #17a2b8; /* Teal for location */
+  }
+  
+  .offre-details-div p .icon-entreprise {
+    color: #6f42c1; /* Purple for company */
+  }
+  
+  /* General color for icons */
+  .offre-details-div p svg {
+    color: #003399; /* Default icon color if not specifically styled */
+  }
+  

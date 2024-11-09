@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Create Slide</h1>
+        <h1>Ajouter Slide</h1>
         <form action="{{ route('slides.store') }}" method="POST" enctype="multipart/form-data">
             @csrf <!-- CSRF Token for security -->
 
@@ -23,8 +23,8 @@
 
             <!-- Start Date -->
             <div class="form-group">
-                <label for="start_date">Start Date:</label>
-                <input type="date" class="form-control" id="start_date" name="start_date">
+                <label for="start_date">Date de début:</label>
+                <input type="date" class="form-control" id="start_date" name="start_date" required>
                 @error('start_date')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -32,15 +32,15 @@
 
             <!-- End Date -->
             <div class="form-group">
-                <label for="end_date">End Date:</label>
-                <input type="date" class="form-control" id="end_date" name="end_date">
+                <label for="end_date">Date de fin:</label>
+                <input type="date" class="form-control" id="end_date" name="end_date" required>
                 @error('end_date')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Add Slide</button>
-            <a href="{{ route('slides.index') }}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            
         </form>
     </div>
 

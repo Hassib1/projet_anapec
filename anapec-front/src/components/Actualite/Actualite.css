@@ -1,81 +1,118 @@
+/* Container for the list of actualités */
 .actualites-list {
-    width: 100%;
-  }
-  
-  .carousel-slide {
-    display: flex;
-    flex-direction: row; /* Align items in a row */
-    overflow: hidden; /* Hide overflow to ensure correct layout */
-  }
-  
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+/* Title styling */
+.act {
+  text-align: center;
+  margin-bottom: 20px; /* Adjusted to reduce space */
+  color: #333;
+  font-size: 28px;
+}
+
+/* Slick slider container */
+.slick-slider {
+  position: relative;
+}
+
+/* Slick slide styling */
+.slick-slide {
+  padding: 10px;
+}
+
+/* Each item in the slider */
+.actualite-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for each item */
+.actualite-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Container for the image */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px; /* Ensure the height is not too large */
+}
+
+/* Image styling */
+.actualite-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(50%); /* Greys out the image */
+  transition: filter 0.3s ease;
+}
+
+/* Image hover effect */
+.actualite-item:hover .actualite-image {
+  filter: grayscale(0%); /* Removes grey filter on hover */
+}
+
+/* Content preview styling */
+.actualite-content-preview {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Content title styling */
+.actualite-content-preview h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Link styling */
+.actualite-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Link hover effect */
+.actualite-link:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
   .actualite-item {
-    position: relative; /* For absolute positioning of content */
-    box-sizing: border-box; /* Include padding and border in width and height */
-    padding: 10px; /* Padding around each item */
-    max-width: 100%; /* Ensure items fit within the carousel */
-    cursor: pointer; /* Indicate that the item is clickable */
+    margin-bottom: 20px; /* Space between items on smaller screens */
   }
-  
-  .image-container {
-    position: relative; /* For absolute positioning of content over the image */
-    width: 100%;
-    height: 200px; /* Fixed height for images */
-    overflow: hidden; /* Hide overflow to maintain aspect ratio */
-    display: flex;
-    align-items: center; /* Center image vertically */
-    justify-content: center; /* Center image horizontally */
-  }
-  
-  .actualite-image {
-    width: 100%; /* Make image fill the container width */
-    height: 100%; /* Make image fill the container height */
-    object-fit: cover; /* Ensure the image covers the container */
-    transition: opacity 0.3s ease; /* Smooth transition for expanded state */
-  }
-  
-  .actualite-image.expanded {
-    opacity: 0.5; /* Dim image when expanded */
-  }
-  
-  .actualite-content-preview,
-  .actualite-content-full {
-    padding: 10px;
-    color: white; /* Text color for better contrast */
-    position: absolute; /* Position absolutely within the container */
-    left: 0;
-    right: 0;
-    border-radius: 5px;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-  }
-  
-  .actualite-content-preview {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    bottom: 0; /* Stick to the bottom of the image */
-    z-index: 1; /* Ensure it appears above the image */
-    width: calc(100% - 20px); /* Full width of the image minus padding */
-    margin: 10px; /* Margin to match padding */
-    transition: opacity 0.3s ease; /* Smooth transition for hiding/showing */
-  }
-  
-  .actualite-content-preview.hidden {
-    opacity: 0; /* Hide the preview content when expanded */
-  }
-  
-  .actualite-content-full {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent black background */
-    top: 0; /* Stick to the top of the image */
-    height: 100%; /* Cover the entire height of the image */
-    z-index: 2; /* Ensure it appears above the image and preview */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow-y: auto; /* Allow scrolling if content overflows */
-    width: 100%; /* Full width of the image */
-  }
+}
+
+@media (max-width: 600px) {
   .act {
-    text-align: center; /* Center text horizontally */
-    margin: 0 auto;
-    color:#490747; /* Center the element if it has a width */
+    font-size: 24px; /* Adjusted font size */
   }
-  
+
+  .actualite-content-preview h3 {
+    font-size: 18px; /* Adjusted font size */
+  }
+
+  .actualite-link {
+    padding: 6px 12px;
+    font-size: 14px; /* Adjusted font size */
+  }
+}
+.slide {
+ /* Adjust the percentage as needed */
+   /* Set a maximum width */
+  height: 350px; /* Automatically adjust height based on aspect ratio */
+}

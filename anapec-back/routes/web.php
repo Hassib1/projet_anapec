@@ -17,10 +17,10 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\OffreController;
+use App\Http\Controllers\VideoController;
 Route::resource('slides',SlideController::class);
 Route::resource('actualites',ActualiteController::class);
-
-
+Route::resource('videos',VideoController::class);
 Route::resource('offres', OffreController::class);
 
 Auth::routes();

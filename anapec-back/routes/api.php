@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\OffreController;
+use App\Http\Controllers\VideoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,5 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('actualite',[ActualiteController::class,'actualite']);
 Route::get('latest', [SlideController::class, 'latest']);
 Route::get('offre',[OffreController::class,'offre']);
+Route::get('video',[VideoController::class,'video']);
+Route::get('/actualites/{id}', [ActualiteController::class, 'show_one']);
 Route::get('/offres/{id}', [OffreController::class, 'show_two']);
-
+Route::get('/videos/{id}', [VideoController::class, 'show_three']);
